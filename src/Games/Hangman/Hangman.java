@@ -110,10 +110,12 @@ public class Hangman implements Game {
 
     private void lose() {
         System.out.println("You have lost!");
+        play = false;
     }
 
     private void win() {
         System.out.println("You have won!");
+        play = false;
     }
 
     private void wrongGuess() {
