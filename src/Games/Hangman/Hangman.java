@@ -1,9 +1,9 @@
 package Games.Hangman;
 
 import Games.Game;
-import Games.Hangman.Recources.Word;
-import Games.Hangman.Recources.WordWriter;
-import Games.Hangman.Recources.WordsReader;
+import Games.Hangman.Resources.Word;
+import Games.Hangman.Resources.WordWriter;
+import Games.Hangman.Resources.WordsReader;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,8 +16,10 @@ import java.util.Scanner;
 
 public class Hangman implements Game {
 
+    private static String gameName = Hangman.class.getSimpleName();
+
     private boolean play = true;
-    private String filePath;
+    private static String filePath;
     private int lives;
     private Word word;
     private ArrayList<Character> guessed;
@@ -25,7 +27,7 @@ public class Hangman implements Game {
 
     public Hangman() {
         try {
-            filePath = findFile() + "/Hangman/words.txt";
+            filePath = findFile() + "/" + gameName + "/words.txt";
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
@@ -124,7 +126,7 @@ public class Hangman implements Game {
         if (lives == 0) lose();
     }
 
-    private String generateWord() {
+    private static String generateWord() {
         Random random = new Random();
         String word = null;
 
@@ -140,19 +142,19 @@ public class Hangman implements Game {
         return word;
     }
 
-    private String findFile() throws URISyntaxException {
-        CodeSource codeSource = this.getClass().getProtectionDomain().getCodeSource();
+    private static String findFile() throws URISyntaxException {
+        CodeSource codeSource = Hangman.class.getProtectionDomain().getCodeSource();
         File jarFile = new File(codeSource.getLocation().toURI().getPath());
         if (!Paths.get(jarFile.getParentFile().getPath() + "/Hangman/words.txt").toFile().exists()) {
             try {
                 File file = new File(jarFile.getParentFile().getPath() + "/Hangman");
-                    if (file.mkdir()) {
-                        file = new File(jarFile.getParentFile().getPath() + "/Hangman/words.txt");
-                        if (file.createNewFile()) {
-                            WordWriter writer = new WordWriter(jarFile.getParentFile().getPath() + "/Hangman/words.txt");
-                            writer.badWrite();
-                        }
+                if (file.mkdir()) {
+                    file = new File(jarFile.getParentFile().getPath() + "/Hangman/words.txt");
+                    if (file.createNewFile()) {
+                        WordWriter writer = new WordWriter(jarFile.getParentFile().getPath() + "/Hangman/words.txt");
+                        writer.badWrite();
                     }
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }

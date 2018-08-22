@@ -1,1 +1,1 @@
-start cmd /K java -jar Games.jar
+start cmd /K java -jar Games.jar console
