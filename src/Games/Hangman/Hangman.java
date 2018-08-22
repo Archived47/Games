@@ -8,6 +8,7 @@ import Games.Hangman.Recources.WordsReader;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.nio.file.Paths;
 import java.security.CodeSource;
 import java.util.ArrayList;
 import java.util.Random;
@@ -140,6 +141,20 @@ public class Hangman implements Game {
     private String findFile() throws URISyntaxException {
         CodeSource codeSource = this.getClass().getProtectionDomain().getCodeSource();
         File jarFile = new File(codeSource.getLocation().toURI().getPath());
+        if (!Paths.get(jarFile.getParentFile().getPath() + "/Hangman/words.txt").toFile().exists()) {
+            try {
+                File file = new File(jarFile.getParentFile().getPath() + "/Hangman");
+                    if (file.mkdir()) {
+                        file = new File(jarFile.getParentFile().getPath() + "/Hangman/words.txt");
+                        if (file.createNewFile()) {
+                            WordWriter writer = new WordWriter(jarFile.getParentFile().getPath() + "/Hangman/words.txt");
+                            writer.badWrite();
+                        }
+                    }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         return jarFile.getParentFile().getPath();
     }
 }

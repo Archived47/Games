@@ -18,11 +18,11 @@ public class WordWriter {
         this.filePath = filePath;
         WordsReader reader = new WordsReader(filePath);
         words = reader.read();
+        File file = Paths.get(filePath).toFile();
+        writer = new BufferedWriter(new FileWriter(file));
     }
 
     private void reWrite() throws IOException {
-        File file = Paths.get(filePath).toFile();
-        writer = new BufferedWriter(new FileWriter(file));
         for (String str : words) {
             writer.write(str + "\n");
         }
@@ -41,6 +41,20 @@ public class WordWriter {
             } else {
                 System.out.println("This word is already known.");
             }
+        }
+        writer.close();
+    }
+
+    public void badWrite() throws IOException {
+        words.add("Cocaine");
+        words.add("Drugs");
+        words.add("Placeholder");
+        words.add("Fahrenheit");
+        words.add("Mother");
+        words.add("Computer");
+        words.add("Productive");
+        for (String s:words) {
+            writer.write(s + "\n");
         }
         writer.close();
     }
