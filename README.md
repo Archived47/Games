@@ -1,3 +1,4 @@
 # Games
 Just some random Java games
-To play, you need the Games.jar and the folder of every game.
+To play, download the Games.jar.
+It will create all the folders you need when you play the game for the first time.
