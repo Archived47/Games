@@ -16,6 +16,9 @@ import java.util.Scanner;
 
 public class Hangman implements Game {
 
+    public static CodeSource codeSource;
+    public static File jarFile;
+
     private static String gameName = Hangman.class.getSimpleName();
     private static String filePath;
 
@@ -142,8 +145,6 @@ public class Hangman implements Game {
     }
 
     private static String findFile() throws URISyntaxException {
-        CodeSource codeSource = Hangman.class.getProtectionDomain().getCodeSource();
-        File jarFile = new File(codeSource.getLocation().toURI().getPath());
         if (!Paths.get(jarFile.getParentFile().getPath() + "/Hangman/words.txt").toFile().exists()) {
             try {
                 File file = new File(jarFile.getParentFile().getPath() + "/Hangman");

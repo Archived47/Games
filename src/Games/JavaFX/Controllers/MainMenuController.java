@@ -26,6 +26,7 @@ public class MainMenuController {
         hideStage(actionEvent);
         Stage stage = new Stage();
         try {
+            //TODO doesn't work with jar files, AARGH!!!!
             Parent root = FXMLLoader.load(getClass().getResource("../FXML/Hangman.fxml"));
             stage.setTitle("Hangman");
             stage.setScene(new Scene(root));

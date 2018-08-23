@@ -7,7 +7,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.lang.reflect.InvocationTargetException;
+import java.net.URISyntaxException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -17,8 +19,18 @@ public class Main extends Application {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        // Temp
+        try {
+            Hangman.codeSource = Hangman.class.getProtectionDomain().getCodeSource();
+            Hangman.jarFile = new File(Hangman.codeSource.getLocation().toURI().getPath());
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+
+
         games = new Class[]{Hangman.class, RoyalGameOfUr.class};
 
+        args = new String[0]; // Only to run FX from the IDE
         if (args.length > 0 && args[0].equals("console")) {
             System.out.println("Console version.");
             while (true) {
