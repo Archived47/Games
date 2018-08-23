@@ -10,12 +10,10 @@ import java.util.Scanner;
 
 public class WordWriter {
 
-    private String filePath;
     private BufferedWriter writer;
     private ArrayList<String> words;
 
     public WordWriter(String filePath) throws IOException {
-        this.filePath = filePath;
         WordsReader reader = new WordsReader(filePath);
         words = reader.read();
         File file = Paths.get(filePath).toFile();
@@ -41,20 +39,6 @@ public class WordWriter {
             } else {
                 System.out.println("This word is already known.");
             }
-        }
-        writer.close();
-    }
-
-    public void badWrite() throws IOException {
-        words.add("Cocaine");
-        words.add("Drugs");
-        words.add("Placeholder");
-        words.add("Fahrenheit");
-        words.add("Mother");
-        words.add("Computer");
-        words.add("Productive");
-        for (String s:words) {
-            writer.write(s + "\n");
         }
         writer.close();
     }

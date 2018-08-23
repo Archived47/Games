@@ -1,5 +1,6 @@
-package Games.JavaFX.Controllers;
+package Games.JavaFX;
 
+import Games.JavaFX.Hangman.HangmanController;
 import Games.RoyalGameOfUr.RoyalGameOfUr;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,8 +27,7 @@ public class MainMenuController {
         hideStage(actionEvent);
         Stage stage = new Stage();
         try {
-            //TODO doesn't work with jar files, AARGH!!!!
-            Parent root = FXMLLoader.load(getClass().getResource("../FXML/Hangman.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Hangman/Hangman.fxml"));
             stage.setTitle("Hangman");
             stage.setScene(new Scene(root));
             stage.setResizable(false);

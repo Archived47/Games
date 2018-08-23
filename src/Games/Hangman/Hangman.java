@@ -7,7 +7,9 @@ import Games.Hangman.Resources.WordsReader;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.CodeSource;
 import java.util.ArrayList;
@@ -29,11 +31,7 @@ public class Hangman implements Game {
     private Scanner scanner;
 
     public Hangman() {
-        try {
-            filePath = findFile() + "/" + gameName + "/words.txt";
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
+        filePath = findFile() + "/" + gameName + "/words.txt";
         lives = 5;
         guessed = new ArrayList<>();
     }
@@ -144,16 +142,14 @@ public class Hangman implements Game {
         return word;
     }
 
-    private static String findFile() throws URISyntaxException {
+    private static String findFile() {
         if (!Paths.get(jarFile.getParentFile().getPath() + "/Hangman/words.txt").toFile().exists()) {
             try {
                 File file = new File(jarFile.getParentFile().getPath() + "/Hangman");
                 if (file.mkdir()) {
-                    file = new File(jarFile.getParentFile().getPath() + "/Hangman/words.txt");
-                    if (file.createNewFile()) {
-                        WordWriter writer = new WordWriter(jarFile.getParentFile().getPath() + "/Hangman/words.txt");
-                        writer.badWrite();
-                    }
+                    InputStream link = (Hangman.class.getResourceAsStream("Resources/words.txt"));
+                    Path path = Paths.get(jarFile.getParentFile().getPath() + "/Hangman/words.txt");
+                    Files.copy(link, path);
                 }
             } catch (IOException e) {
                 e.printStackTrace();

@@ -1,4 +1,4 @@
-package Games.JavaFX.Controllers;
+package Games.JavaFX.Hangman;
 
 import Games.Hangman.Hangman;
 import Games.Hangman.Resources.Word;
@@ -21,7 +21,7 @@ import java.util.ResourceBundle;
 public class HangmanController implements Initializable {
 
     private Stage stage;
-    static Stage mainStage;
+    public static Stage mainStage;
     private int currentStage;
     private Shape[] stages;
     private Word sWord;

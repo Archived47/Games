@@ -30,7 +30,7 @@ public class Main extends Application {
 
         games = new Class[]{Hangman.class, RoyalGameOfUr.class};
 
-        args = new String[0]; // Only to run FX from the IDE
+//        args = new String[0]; // Only to run FX from the IDE
         if (args.length > 0 && args[0].equals("console")) {
             System.out.println("Console version.");
             while (true) {
@@ -83,7 +83,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Games/JavaFX/FXML/MainMenu.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Games/JavaFX/MainMenu.fxml"));
         primaryStage.setTitle("Main Menu");
         primaryStage.setScene(new Scene(root));
         primaryStage.setResizable(false);
