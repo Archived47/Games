@@ -13,18 +13,13 @@ import java.util.Scanner;
 
 public class Main extends Application {
 
-    public static Stage stage;
-    public static boolean console;
-
     private static Class[] games;
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         games = new Class[]{Hangman.class, RoyalGameOfUr.class};
 
-//        args = new String[0];
         if (args.length > 0 && args[0].equals("console")) {
-            console = true;
             System.out.println("Console version.");
             while (true) {
                 System.out.println("What game do you want to play?");
@@ -39,12 +34,12 @@ public class Main extends Application {
                 Class choice = games[gameNumber-1];
                 try {
                     Game game = ((Game) choice.getDeclaredConstructors()[0].newInstance());
+                    game.run();
                 } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
                     e.printStackTrace();
                 }
             }
         } else {
-            console = false;
             System.out.println("JavaFX console");
             launch(args);
         }
@@ -76,9 +71,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        stage = primaryStage;
-
-        Parent root = FXMLLoader.load(getClass().getResource("Games/JavaFXMenu/FXML/MainMenu.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Games/JavaFX/FXML/MainMenu.fxml"));
         primaryStage.setTitle("Main Menu");
         primaryStage.setScene(new Scene(root));
         primaryStage.setResizable(false);

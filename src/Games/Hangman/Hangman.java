@@ -17,9 +17,9 @@ import java.util.Scanner;
 public class Hangman implements Game {
 
     private static String gameName = Hangman.class.getSimpleName();
+    private static String filePath;
 
     private boolean play = true;
-    private static String filePath;
     private int lives;
     private Word word;
     private ArrayList<Character> guessed;
@@ -33,7 +33,6 @@ public class Hangman implements Game {
         }
         lives = 5;
         guessed = new ArrayList<>();
-        run();
     }
 
     @Override
@@ -126,7 +125,7 @@ public class Hangman implements Game {
         if (lives == 0) lose();
     }
 
-    private static String generateWord() {
+    public static String generateWord() {
         Random random = new Random();
         String word = null;
 

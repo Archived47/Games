@@ -1,4 +1,4 @@
-package Games.JavaFXMenu.Controllers;
+package Games.JavaFX.Controllers;
 
 import Games.RoyalGameOfUr.RoyalGameOfUr;
 import javafx.event.ActionEvent;
@@ -13,9 +13,10 @@ import java.io.IOException;
 
 public class MainMenuController {
 
+    private Stage primaryStage;
+
     @FXML
     private Button hangman;
-
     @FXML
     private Button RGoU;
 
@@ -26,10 +27,11 @@ public class MainMenuController {
         Stage stage = new Stage();
         try {
             Parent root = FXMLLoader.load(getClass().getResource("../FXML/Hangman.fxml"));
-            stage.setTitle("Main Menu");
+            stage.setTitle("Hangman");
             stage.setScene(new Scene(root));
             stage.setResizable(false);
             stage.show();
+            HangmanController.mainStage = primaryStage;
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -43,11 +45,12 @@ public class MainMenuController {
 
     /**
      * A helper function to hide the stage.
-     * @param event the event that happenes
+     * @param event the event that happened
      */
     private void hideStage(ActionEvent event) {
         Button button = (Button) event.getSource();
         Stage stage = (Stage) button.getScene().getWindow();
+        primaryStage = stage;
         stage.hide();
     }
 }
