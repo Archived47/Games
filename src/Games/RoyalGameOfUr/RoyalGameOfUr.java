@@ -4,12 +4,12 @@ import Games.Game;
 
 public class RoyalGameOfUr implements Game {
 
-    public boolean player;
+    public boolean playing;
     public Player[] players;
     public Dice die;
 
     public RoyalGameOfUr() {
-        player = true;
+        playing = true;
         players = new Player[]{new Player(), new Player()};
         die = new Dice();
     }

@@ -2,6 +2,7 @@ package Games.JavaFX.RoyalGameOfUr;
 
 import Games.RoyalGameOfUr.Field;
 import Games.RoyalGameOfUr.Piece;
+import Games.RoyalGameOfUr.Player;
 import Games.RoyalGameOfUr.RoyalGameOfUr;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -16,9 +17,9 @@ public class PlayFieldController implements Initializable {
 
     public static Stage mainStage;
 
-    RoyalGameOfUr gameOfUr;
-    boolean activeTurn;
-    int currentSteps;
+    private RoyalGameOfUr gameOfUr;
+    private boolean activeTurn;
+    private int currentSteps = -1;
 
     @FXML
     private ImageView dice;
@@ -100,33 +101,65 @@ public class PlayFieldController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         gameOfUr = new RoyalGameOfUr();
-        Piece[] player1Pieces = new Piece[]{p1_1, p1_2, p1_3, p1_4, p1_5, p1_6, p1_7};
-        Piece[] player2Pieces = new Piece[]{p2_1, p2_2, p2_3, p2_4, p2_5, p2_6, p2_7};
+
+        gameOfUr.players[0].pieces = new Piece[]{p1_1, p1_2, p1_3, p1_4, p1_5, p1_6, p1_7};
+        gameOfUr.players[1].pieces = new Piece[]{p2_1, p2_2, p2_3, p2_4, p2_5, p2_6, p2_7};
 
         setPaths();
 
-        for (Piece piece:player1Pieces) {
+        for (Piece piece:gameOfUr.players[0].pieces) {
+            piece.setInitialLocation();
             movePiece(piece);
         }
-        for (Piece piece:player2Pieces) {
+        for (Piece piece:gameOfUr.players[1].pieces) {
+            piece.setInitialLocation();
             movePiece(piece);
         }
 
-        dice.setOnMouseClicked(event -> {
-            roll();
-        });
+        dice.setOnMouseClicked(event -> roll());
     }
 
     private void movePiece(Piece piece) {
         piece.setOnMouseClicked(e -> {
-
+            Player player = gameOfUr.players[gameOfUr.playing ? 0 : 1];
+            for (Piece piece1: player.pieces) {
+                if (piece == piece1) {
+                    //TODO Make the piece movable.
+                    if (currentSteps >= 0) {
+                        if (currentSteps != 0) {
+                            if (piece.isMovable(currentSteps, player)) {
+                                piece.move(currentSteps, player);
+                                endTurn(player.path.fields[piece.getCurrentField()].rosette);
+                            }
+                        }
+                    } else {
+                        new Alert(Alert.AlertType.ERROR, "Please roll the dice first.").show();
+                    }
+                    break;
+                }
+            }
         });
     }
 
+    private void endTurn(boolean rosette) {
+        activeTurn = false;
+        currentSteps = -1;
+        if (!rosette) {
+            gameOfUr.playing = !gameOfUr.playing;
+        }
+    }
+
     private void roll() {
+        // TODO make dice change color based on whose turn it is.
         if (!activeTurn) {
             currentSteps = gameOfUr.die.roll();
-            activeTurn = true;
+            if (currentSteps == 0) {
+                new Alert(Alert.AlertType.INFORMATION, "You rolled " + currentSteps + ", you skip a turn.").show();
+                endTurn(false);
+            } else {
+                new Alert(Alert.AlertType.INFORMATION, "You rolled " + currentSteps).show();
+                activeTurn = true;
+            }
         } else {
             new Alert(Alert.AlertType.ERROR, "Waiting for current turn to end.").show();
         }

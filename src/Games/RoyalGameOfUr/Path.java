@@ -9,7 +9,12 @@ public class Path {
     }
 
     Player occupied(int i) {
-        return fields[i].occupier;
+        try {
+            return fields[i].occupier;
+        } catch (ArrayIndexOutOfBoundsException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
 }

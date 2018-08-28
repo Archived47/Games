@@ -12,7 +12,7 @@ public class Player {
     boolean movePiece(Piece piece, int steps) {
         for (Piece p: pieces) {
             if (p == piece) {
-                if (path.occupied(p.currentField + steps) != null && path.occupied(p.currentField + steps) != this) {
+                if (path.occupied(p.getCurrentField() + steps) != null && path.occupied(p.getCurrentField() + steps) != this) {
                     System.out.println("This piece can not be moved to this position.");
                 }
                 break;
