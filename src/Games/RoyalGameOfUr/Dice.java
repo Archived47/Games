@@ -10,7 +10,7 @@ public class Dice {
         random = new Random();
     }
 
-    int roll() {
+    public int roll() {
         int result = 0;
         for (int i = 0; i < 4; i++) {
             result += random.nextInt(2);

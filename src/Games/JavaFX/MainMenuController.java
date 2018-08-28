@@ -39,7 +39,7 @@ public class MainMenuController {
 
     }
 
-    public void playRGoU(javafx.event.ActionEvent actionEvent) {
+    public void playRGoU(ActionEvent actionEvent) {
         hideStage(actionEvent);
         Stage stage = new Stage();
         try {

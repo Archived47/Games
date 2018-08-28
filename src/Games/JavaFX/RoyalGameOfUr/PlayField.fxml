@@ -1,85 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
+<?import Games.RoyalGameOfUr.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-      prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="Games.JavaFX.RoyalGameOfUr.PlayFieldController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Games.JavaFX.RoyalGameOfUr.PlayFieldController">
 
    <AnchorPane prefHeight="400.0" prefWidth="600.0">
 
       <ImageView fitHeight="212.0" fitWidth="568.0" layoutX="22.0" layoutY="83.0" preserveRatio="true">
-         <Image url="@../../RoyalGameOfUr/Materials/RoyalGameOfUr.png"/>
+         <Image url="@../../RoyalGameOfUr/Materials/RoyalGameOfUr.png" />
       </ImageView>
 
-      <Rectangle fx:id="player2_1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="234.0"
-                 layoutY="94.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0"/>
-      <Rectangle fx:id="player2_2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="167.0"
-                 layoutY="95.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0"/>
-      <Rectangle fx:id="player2_3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="100.0"
-                 layoutY="95.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0"/>
-      <Rectangle fx:id="player2_4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="34.0"
-                 layoutY="95.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0"/>
-      <Rectangle fx:id="player1_1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="234.0"
-                 layoutY="226.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0"/>
-      <Rectangle fx:id="player1_2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="167.0"
-                 layoutY="227.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0"/>
-      <Rectangle fx:id="player1_3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="100.0"
-                 layoutY="227.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0"/>
-      <Rectangle fx:id="player1_4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="34.0"
-                 layoutY="227.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0"/>
-      <Rectangle fx:id="player0_1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="33.0"
-                 layoutY="161.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0"/>
-      <Rectangle fx:id="player0_2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="101.0"
-                 layoutY="162.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0"/>
-      <Rectangle fx:id="player0_3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="167.0"
-                 layoutY="163.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0"/>
-      <Rectangle fx:id="player0_4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="235.0"
-                 layoutY="162.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0"/>
-      <Rectangle fx:id="player0_5" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="301.0"
-                 layoutY="162.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0"/>
-      <Rectangle fx:id="player0_6" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="368.0"
-                 layoutY="162.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0"/>
-      <Rectangle fx:id="player0_7" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="434.0"
-                 layoutY="162.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0"/>
-      <Rectangle fx:id="player0_8" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="502.0"
-                 layoutY="164.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0"/>
-      <Rectangle fx:id="player1_5" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="502.0"
-                 layoutY="231.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0"/>
-      <Rectangle fx:id="player1_6" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="436.0"
-                 layoutY="229.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0"/>
-      <Rectangle fx:id="player2_5" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="502.0"
-                 layoutY="97.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0"/>
-      <Rectangle fx:id="player2_6" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="436.0"
-                 layoutY="95.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0"/>
+      <Field fx:id="player2_1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="234.0" layoutY="94.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0" />
+      <Field fx:id="player2_2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="167.0" layoutY="95.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0" />
+      <Field fx:id="player2_3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="100.0" layoutY="95.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0" />
+      <Field fx:id="player2_4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="34.0" layoutY="95.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0" />
+      <Field fx:id="player1_1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="234.0" layoutY="226.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0" />
+      <Field fx:id="player1_2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="167.0" layoutY="227.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0" />
+      <Field fx:id="player1_3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="100.0" layoutY="227.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0" />
+      <Field fx:id="player1_4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="34.0" layoutY="227.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0" />
+      <Field fx:id="player0_1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="33.0" layoutY="161.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0" />
+      <Field fx:id="player0_2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="101.0" layoutY="162.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0" />
+      <Field fx:id="player0_3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="167.0" layoutY="163.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0" />
+      <Field fx:id="player0_4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="235.0" layoutY="162.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0" />
+      <Field fx:id="player0_5" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="301.0" layoutY="162.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0" />
+      <Field fx:id="player0_6" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="368.0" layoutY="162.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0" />
+      <Field fx:id="player0_7" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="434.0" layoutY="162.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0" />
+      <Field fx:id="player0_8" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="502.0" layoutY="164.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0" />
+      <Field fx:id="player1_5" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="502.0" layoutY="231.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0" />
+      <Field fx:id="player1_6" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="436.0" layoutY="229.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0" />
+      <Field fx:id="player2_5" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="502.0" layoutY="97.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0" />
+      <Field fx:id="player2_6" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="436.0" layoutY="95.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0" />
 
       <HBox layoutY="325.0" prefHeight="75.0" prefWidth="496.0" spacing="10.0" AnchorPane.leftAnchor="10.0">
          <opaqueInsets>
-            <Insets/>
+            <Insets />
          </opaqueInsets>
-         <Circle fx:id="p1_1" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE"/>
-         <Circle fx:id="p1_2" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE"/>
-         <Circle fx:id="p1_3" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE"/>
-         <Circle fx:id="p1_4" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE"/>
-         <Circle fx:id="p1_5" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE"/>
-         <Circle fx:id="p1_6" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE"/>
-         <Circle fx:id="p1_7" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE"/>
+         <Piece fx:id="p1_1" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
+         <Piece fx:id="p1_2" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
+         <Piece fx:id="p1_3" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
+         <Piece fx:id="p1_4" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
+         <Piece fx:id="p1_5" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
+         <Piece fx:id="p1_6" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
+         <Piece fx:id="p1_7" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
       </HBox>
 
-      <HBox layoutX="3.0" layoutY="4.0" prefHeight="65.0" prefWidth="496.0" spacing="10.0"
-            AnchorPane.leftAnchor="10.0">
-         <Circle fx:id="p2_1" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE"/>
-         <Circle fx:id="p2_2" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE"/>
-         <Circle fx:id="p2_3" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE"/>
-         <Circle fx:id="p2_4" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE"/>
-         <Circle fx:id="p2_5" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE"/>
-         <Circle fx:id="p2_6" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE"/>
-         <Circle fx:id="p2_7" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE"/>
+      <HBox layoutX="3.0" layoutY="4.0" prefHeight="65.0" prefWidth="496.0" spacing="10.0" AnchorPane.leftAnchor="10.0">
+         <Piece fx:id="p2_1" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
+         <Piece fx:id="p2_2" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
+         <Piece fx:id="p2_3" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
+         <Piece fx:id="p2_4" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
+         <Piece fx:id="p2_5" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
+         <Piece fx:id="p2_6" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
+         <Piece fx:id="p2_7" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
       </HBox>
+       <ImageView fx:id="dice" fitHeight="86.0" fitWidth="111.0" layoutX="498.0" layoutY="325.0" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="498.0" AnchorPane.rightAnchor="12.814811706542969" AnchorPane.topAnchor="304.0">
+           <Image url="@../../RoyalGameOfUr/Materials/dice.png" />
+       </ImageView>
 
    </AnchorPane>
 
