@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import Games.RoyalGameOfUr.*?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
@@ -34,28 +33,22 @@
       <Field fx:id="player2_5" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="502.0" layoutY="97.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0" />
       <Field fx:id="player2_6" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="57.0" layoutX="436.0" layoutY="95.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="56.0" />
 
-      <HBox layoutY="325.0" prefHeight="75.0" prefWidth="496.0" spacing="10.0" AnchorPane.leftAnchor="10.0">
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-         <Piece fx:id="p1_1" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
-         <Piece fx:id="p1_2" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
-         <Piece fx:id="p1_3" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
-         <Piece fx:id="p1_4" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
-         <Piece fx:id="p1_5" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
-         <Piece fx:id="p1_6" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
-         <Piece fx:id="p1_7" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
-      </HBox>
+      <Piece fx:id="p1_1" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE" centerX="40" centerY="350" />
+      <Piece fx:id="p1_2" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE" centerX="100" centerY="350" />
+      <Piece fx:id="p1_3" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE" centerX="160" centerY="350" />
+      <Piece fx:id="p1_4" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE" centerX="220" centerY="350" />
+      <Piece fx:id="p1_5" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE" centerX="280" centerY="350" />
+      <Piece fx:id="p1_6" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE" centerX="340" centerY="350" />
+      <Piece fx:id="p1_7" fill="#ea0404" radius="28.0" stroke="BLACK" strokeType="INSIDE" centerX="400" centerY="350" />
 
-      <HBox layoutX="3.0" layoutY="4.0" prefHeight="65.0" prefWidth="496.0" spacing="10.0" AnchorPane.leftAnchor="10.0">
-         <Piece fx:id="p2_1" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
-         <Piece fx:id="p2_2" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
-         <Piece fx:id="p2_3" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
-         <Piece fx:id="p2_4" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
-         <Piece fx:id="p2_5" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
-         <Piece fx:id="p2_6" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
-         <Piece fx:id="p2_7" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
-      </HBox>
+      <Piece fx:id="p2_1" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE" centerX="40" centerY="50" />
+      <Piece fx:id="p2_2" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE" centerX="100" centerY="50" />
+      <Piece fx:id="p2_3" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE" centerX="160" centerY="50" />
+      <Piece fx:id="p2_4" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE" centerX="220" centerY="50" />
+      <Piece fx:id="p2_5" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE" centerX="280" centerY="50" />
+      <Piece fx:id="p2_6" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE" centerX="340" centerY="50" />
+      <Piece fx:id="p2_7" fill="DODGERBLUE" radius="28.0" stroke="BLACK" strokeType="INSIDE" centerX="400" centerY="50" />
+
        <ImageView fx:id="dice" fitHeight="86.0" fitWidth="111.0" layoutX="498.0" layoutY="325.0" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="498.0" AnchorPane.rightAnchor="12.814811706542969" AnchorPane.topAnchor="304.0">
            <Image url="@../../RoyalGameOfUr/Materials/dice.png" />
        </ImageView>
