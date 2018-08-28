@@ -1,12 +1,17 @@
 package Games.RoyalGameOfUr;
 
+import javafx.scene.shape.Rectangle;
+
 public class Field {
 
     boolean rosette;
-    boolean occupied;
+    Player occupier;
+    Rectangle physical;
 
-    Field(boolean rosette) {
+    public Field(boolean rosette, Rectangle rectangle) {
         this.rosette = rosette;
+        occupier = null;
+        physical = rectangle;
     }
 
 }

@@ -1,6 +1,5 @@
 import Games.Game;
 import Games.Hangman.Hangman;
-import Games.RoyalGameOfUr.RoyalGameOfUr;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -28,9 +27,9 @@ public class Main extends Application {
         }
 
 
-        games = new Class[]{Hangman.class, RoyalGameOfUr.class};
+        games = new Class[]{Hangman.class};
 
-//        args = new String[0]; // Only to run FX from the IDE
+        args = new String[0]; // Only to run FX from the IDE
         if (args.length > 0 && args[0].equals("console")) {
             System.out.println("Console version.");
             while (true) {

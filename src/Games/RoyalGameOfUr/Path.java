@@ -2,14 +2,14 @@ package Games.RoyalGameOfUr;
 
 public class Path {
 
-    Field[] fields;
+    public Field[] fields;
 
     Path() {
         fields = new Field[14];
     }
 
-    boolean occupied(int i) {
-        return fields[i].occupied;
+    Player occupied(int i) {
+        return fields[i].occupier;
     }
 
 }

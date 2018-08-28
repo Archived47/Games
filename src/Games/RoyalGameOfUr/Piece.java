@@ -1,11 +1,15 @@
 package Games.RoyalGameOfUr;
 
+import javafx.scene.shape.Circle;
+
 public class Piece {
 
     int currentField;
+    Circle physical;
 
-    Piece() {
+    Piece(Circle circle) {
         currentField = -1;
+        physical = circle;
     }
 
     public boolean isMoveable(int steps) {

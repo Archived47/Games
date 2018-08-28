@@ -1,7 +1,7 @@
 package Games.JavaFX;
 
 import Games.JavaFX.Hangman.HangmanController;
-import Games.RoyalGameOfUr.RoyalGameOfUr;
+import Games.JavaFX.RoyalGameOfUr.PlayFieldController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -41,7 +41,17 @@ public class MainMenuController {
 
     public void playRGoU(javafx.event.ActionEvent actionEvent) {
         hideStage(actionEvent);
-        RoyalGameOfUr RGoR = new RoyalGameOfUr();
+        Stage stage = new Stage();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("RoyalGameOfUr/PlayField.fxml"));
+            stage.setTitle("The Royal Game of Ur");
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.show();
+            PlayFieldController.mainStage = primaryStage;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**

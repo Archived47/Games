@@ -1,14 +1,19 @@
 package Games.RoyalGameOfUr;
 
+import javafx.scene.shape.Circle;
+
 public class Player {
 
-    Piece[] pieces;
-    Path path;
+    public Piece[] pieces;
+    public Path path;
 
     Player() {
-        pieces = new Piece[7];
-        for (int i = 0; i < pieces.length; i++) {
-            pieces[i] = new Piece();
+    }
+
+    public void setPieces(Circle[] circles) {
+        pieces = new Piece[circles.length];
+        for (int i = 0; i < circles.length; i++) {
+            pieces[i] = new Piece(circles[i]);
         }
         path = new Path();
     }
@@ -16,7 +21,7 @@ public class Player {
     boolean movePiece(Piece piece, int steps) {
         for (Piece p: pieces) {
             if (p == piece) {
-                if (path.occupied(p.currentField + steps)) {
+                if (path.occupied(p.currentField + steps) != null && path.occupied(p.currentField + steps) != this) {
                     System.out.println("This piece can not be moved to this position.");
                 }
                 break;
