@@ -1,4 +1,4 @@
-package Games.RoyalGameOfUr;
+package Games.RoyalGameOfUr.Resources;
 
 public class Path {
 

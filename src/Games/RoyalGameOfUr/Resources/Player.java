@@ -1,11 +1,11 @@
-package Games.RoyalGameOfUr;
+package Games.RoyalGameOfUr.Resources;
 
 public class Player {
 
     public Piece[] pieces;
     public Path path;
 
-    Player() {
+    public Player() {
         path = new Path();
     }
 

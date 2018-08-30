@@ -128,7 +128,7 @@ public class HangmanController implements Initializable {
         Hangman hangman = new Hangman();
         currentStage = 0;
         stages = new Shape[]{pole, roof, support, rope, head, torso, rArm, lArm, rLeg, lLeg};
-        sWord = new Word(Hangman.generateWord());
+        sWord = new Word(hangman.generateWord());
 
         setWordText();
 

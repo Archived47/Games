@@ -1,8 +1,8 @@
 package Games.JavaFX.RoyalGameOfUr;
 
-import Games.RoyalGameOfUr.Field;
-import Games.RoyalGameOfUr.Piece;
-import Games.RoyalGameOfUr.Player;
+import Games.RoyalGameOfUr.Resources.Field;
+import Games.RoyalGameOfUr.Resources.Piece;
+import Games.RoyalGameOfUr.Resources.Player;
 import Games.RoyalGameOfUr.RoyalGameOfUr;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

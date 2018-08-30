@@ -1,4 +1,4 @@
-package Games.RoyalGameOfUr;
+package Games.RoyalGameOfUr.Resources;
 
 import java.util.Random;
 
@@ -6,7 +6,7 @@ public class Dice {
 
     private Random random;
 
-    Dice() {
+    public Dice() {
         random = new Random();
     }
 

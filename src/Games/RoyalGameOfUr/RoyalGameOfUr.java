@@ -1,8 +1,9 @@
 package Games.RoyalGameOfUr;
 
-import Games.Game;
+import Games.RoyalGameOfUr.Resources.Dice;
+import Games.RoyalGameOfUr.Resources.Player;
 
-public class RoyalGameOfUr implements Game {
+public class RoyalGameOfUr {
 
     public boolean playing;
     public Player[] players;
@@ -12,10 +13,5 @@ public class RoyalGameOfUr implements Game {
         playing = true;
         players = new Player[]{new Player(), new Player()};
         die = new Dice();
-    }
-
-    @Override
-    public void run() {
-
     }
 }
